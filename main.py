@@ -41,15 +41,15 @@ def mostrar_info(mesas: dict, colas: list, segundos: int):
     print("\nCola atendida: ")
     if colas[1]:
         for grupo in colas[1]:
-            print(f"Posición: {grupo.posicion}\t\tNúmero de personas: "
+            print(f"Posicion: {grupo.posicion}\t\tNumero de personas: "
                   f"{grupo.comensales}\t\tTiempo para comer: {grupo.tiempo}")
     else:
-        print("Vacía")
+        print("Vacia")
 
     print("\nCola sin atender: ")
     if colas[0]:
         for grupo in colas[0]:
-            print(f"Posición: {grupo.posicion}\t\tNúmero de personas: "
+            print(f"Posicion: {grupo.posicion}\t\tNumero de personas: "
                   f"{grupo.comensales}\t\tTiempo para comer: {grupo.tiempo}")
     else:
         print("Vacía")
