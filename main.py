@@ -1,13 +1,6 @@
-"""
-Primero se mirará la primera persona que llegó a la cola, después se mira si hay una mesa con misma capacidad o uno más
-que el número de personas, y si no está reservado se asignará esa mesa a las personas.
-El tiempo se medirá en segundos y se asumirá que las personas de media tardarán 7200 segundos en comer
-"""
-
-from time import sleep  # Añadir delay
+from time import sleep
 
 
-# Mesa
 class Mesa:
     def __init__(self, id: int, capacidad: int, tiempo_restante: int = 0):
         self.id = id
@@ -25,7 +18,6 @@ class Grupo:
         self.tiempo = tiempo
 
 
-# Lista de las mesas disponibles
 def mesas_disponibles(mesas: dict):
     mesas_libres = []
     for mesa in mesas:
@@ -35,7 +27,6 @@ def mesas_disponibles(mesas: dict):
     return mesas_libres
 
 
-# Mostrar la información del Segundo, las colas y las mesas
 def mostrar_info(mesas: dict, colas: list, segundos: int):
     print(f"\n\nSegundo: {segundos}")
     print("\nCola atendida: ")
@@ -63,7 +54,6 @@ def mostrar_info(mesas: dict, colas: list, segundos: int):
                   f"\t\t\tTiempo restante: {mesas[mesa].tiempo_restante}")
 
 
-# Main
 def main(mesas: dict, colas: list, tiempo: int = 300):
     segundos = 0
 
@@ -111,11 +101,8 @@ def main(mesas: dict, colas: list, tiempo: int = 300):
                 mesas[mesa].tiempo_restante -= tiempo
 
         sleep(1)
-        # input()
 
 
-# *Datos de ejemplo*
-# Mesas
 mesa1 = Mesa(1, 2, 7200)
 mesa2 = Mesa(2, 3, 5400)
 mesa3 = Mesa(3, 4)
@@ -143,7 +130,6 @@ mesas_prueba = {
     12: mesa12
 }
 
-# Grupos
 grupo1 = Grupo(1, 2, 5400)
 grupo2 = Grupo(2, 5, 3600)
 grupo3 = Grupo(3, 8)
@@ -155,7 +141,6 @@ grupo8 = Grupo(8, 7, 4800)
 grupo9 = Grupo(9, 6, 8400)
 grupo10 = Grupo(10, 1)
 
-# Colas
 sin_atender = [
     grupo4,
     grupo5,
